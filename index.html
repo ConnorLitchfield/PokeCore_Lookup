@@ -22,7 +22,7 @@ function search() {
   var searchRow = parseInt(document.getElementById("searchRow").value);
   
     // Update Image
-  document.getElementById("imgOut").src = "https://images.pokecord.xyz/regular/" & searchRow & ".png";
+  document.getElementById("imgOut").src = "https://images.pokecord.xyz/regular/" + searchRow + ".png";
 
   // Define the CSV file path
   var csvFilePath = "data.csv";
@@ -50,6 +50,6 @@ function search() {
     .catch(error => console.error(error));
 }
     </script>
-<BR><BR><BR><BR> V1.2
+<BR><BR><BR><BR> V1.5
   </body>
 </html>
