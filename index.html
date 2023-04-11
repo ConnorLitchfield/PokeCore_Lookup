@@ -26,6 +26,20 @@
     }
     });
    </script>
+   
+   <script>
+   function textToClipboard (text) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = "@Pokecord#4908 catch " + text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	console.error("@Pokecord#4908 catch " + text);
+	alert("Catch Code Copied to ClipBoard")
+}
+   </script>
+   
 	
     <script>
 function search() {
@@ -53,6 +67,7 @@ function search() {
         if (searchRow <= lines.length) {
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
+		  textToClipboard(cols[0])
         } else {
           document.getElementById("result").innerHTML = "Row not found";
         }
@@ -64,6 +79,6 @@ function search() {
 
 
     </script>
-<BR><BR><BR><BR>V2.5<BR>Made for my beautiful wife Stasia.
+<BR><BR><BR><BR>V2.7<BR>Made for my beautiful wife Stasia.
   </body>
 </html>
