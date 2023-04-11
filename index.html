@@ -14,13 +14,15 @@
     </form>
 	    <h2>NAME: </h2><h2 id="result"></h2>
     <BR>
-	<img src="https://images.pokecord.xyz/regular/286.png"></img>
+	<img id="imgOut" src=""></img>
     <script>
 function search() {
-  // Update Image
 
   // Get the user input
   var searchRow = parseInt(document.getElementById("searchRow").value);
+  
+    // Update Image
+  document.getElementById("imgOut").src = "https://images.pokecord.xyz/regular/" & searchRow & ".png";
 
   // Define the CSV file path
   var csvFilePath = "data.csv";
