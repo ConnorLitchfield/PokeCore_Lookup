@@ -53,9 +53,6 @@ function search() {
         if (searchRow <= lines.length) {
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
-		  text = document.getElementById("result").innerHTML;//NEW
-		  window.clipboardData.setData("Text", text);//NEW
-		  alert("Copied the catch code to the clipboard: " + text);	//NEW
         } else {
           document.getElementById("result").innerHTML = "Row not found";
         }
