@@ -18,14 +18,14 @@
 	<img id="imgOut" src=""></img>
 	
 	<script>
-var input = document.getElementById("searchRow");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
+    var input = document.getElementById("searchRow");
+    input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("myBtn").click();
-  }
-});
-</script>
+    }
+    });
+   </script>
 	
     <script>
 function search() {
@@ -53,6 +53,9 @@ function search() {
         if (searchRow <= lines.length) {
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
+		  text = document.getElementById("result").innerHTML;//NEW
+		  window.clipboardData.setData("Text", text);//NEW
+		  alert("Copied the catch code to the clipboard: " + text);	//NEW
         } else {
           document.getElementById("result").innerHTML = "Row not found";
         }
@@ -61,7 +64,9 @@ function search() {
     })
     .catch(error => console.error(error));
 }
+
+
     </script>
-<BR><BR><BR><BR>V1.9<BR>Made for my beautiful wife Stasia.
+<BR><BR><BR><BR>V2.0<BR>Made for my beautiful wife Stasia.
   </body>
 </html>
