@@ -81,8 +81,7 @@ function search() {
   // Get the user input
   var searchRow = parseInt(document.getElementById("searchRow").value);
   
-    // Update Image
-  document.getElementById("imgOut").src = "https://images.pokecord.xyz/regular/" + searchRow + ".png";
+
 
   // Define the CSV file path
   var csvFilePath = "data.csv";
@@ -101,9 +100,12 @@ function search() {
         if (searchRow <= lines.length) {
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
-		  textToClipboard(cols[0])
+	  textToClipboard(cols[0])
+	  // Update Image
+          document.getElementById("imgOut").src = "https://images.pokecord.xyz/regular/" + searchRow + ".png";
         } else {
           document.getElementById("result").innerHTML = "Pokemon Number Not Found!";
+	  document.getElementById("imgOut").src = "";
         }
       };
       reader.readAsText(blob);
