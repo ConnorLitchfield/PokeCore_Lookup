@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
     <title>PokeCore Name Lookup</title>
+	
+	<style>
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+h4 {
+  color: red;
+}
+p {
+  color: white;
+}
+label {
+  color: white;
+}
+body {
+  background-color: black;
+}
+button { 
+  height: 50px; 
+  width: 100px; 
+} 
+input { 
+  height: 50px; 
+  width: 200px; 
+} 
+</style>
+
   </head>
   <body>
     <h1>PokeCore Name Lookup</h1>
     <form>
-      <br><br>
       <label for="searchRow">Enter the PNG number from the image in discord:</label><BR>
       <input type="number" id="searchRow">
       <button id="myBtn" type="button" onclick="search()">Search</button>
     </form>
+		<div id="Message"><H4>Catch Code Copied to ClipBoard</H4></div>
 	    <h2>NAME: </h2><h2 id="result"></h2>
     <BR>
-	<img id="imgOut" src=""></img>
+	<img id="imgOut" src="" style="max-width: 100%"></img>
 	
 	<script>
     var input = document.getElementById("searchRow");
@@ -28,6 +58,9 @@
    </script>
    
    <script>
+   
+   const delay = ms => new Promise(res => setTimeout(res, ms));
+   
    function textToClipboard (text) {
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
@@ -36,7 +69,10 @@
     document.execCommand("copy");
     document.body.removeChild(dummy);
 	console.error("@Pokecord#4908 catch " + text);
-	alert("Catch Code Copied to ClipBoard")
+    var x = document.getElementById("Message");
+	x.style.display = "block";
+	await delay(2000);
+    x.style.display = "none";
 }
    </script>
    
@@ -79,6 +115,6 @@ function search() {
 
 
     </script>
-<BR><BR><BR><BR>V2.7<BR>Made for my beautiful wife Stasia.
+<BR><BR><BR><BR><p>V2.8<BR>Made for my beautiful wife Stasia.</p>
   </body>
 </html>
