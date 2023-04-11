@@ -1,0 +1,4 @@
+Download all images from url, creat list from csv.
+Resize and Compress all images to 200X200, get size as low as possible.
+Upload all to folder in github
+Correct code to pull from github instead.
