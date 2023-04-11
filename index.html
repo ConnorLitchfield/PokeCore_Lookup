@@ -42,7 +42,6 @@ input {
       <input type="number" id="searchRow">
       <button id="myBtn" type="button" onclick="search()">Search</button>
     </form>
-		<div id="Message"><H4>Catch Code Copied to ClipBoard</H4></div>
 	    <h2>NAME: </h2><h2 id="result"></h2>
     <BR>
 	<img id="imgOut" src="" style="max-width: 100%"></img>
@@ -70,9 +69,8 @@ input {
     document.body.removeChild(dummy);
 	console.error("@Pokecord#4908 catch " + text);
     var x = document.getElementById("Message");
-	x.style.display = "block";
-	await delay(2000);
-    x.style.display = "none";
+	alert("Catch Code Copied to ClipBoard");
+
 }
    </script>
    
@@ -115,6 +113,6 @@ function search() {
 
 
     </script>
-<BR><BR><BR><BR><p>V2.8<BR>Made for my beautiful wife Stasia.</p>
+<BR><BR><BR><BR><p>V3.0<BR>Made for my beautiful wife Stasia.</p>
   </body>
 </html>
