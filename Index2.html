@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSV Search</title>
+  </head>
+  <body>
+    <h1>CSV Search</h1>
+    <p>Select a CSV file:</p>
+    <form>
+      <input type="file" id="csvFile"> 
+      <br><br>
+      <label for="searchRow">Enter a row number:</label>
+      <input type="number" id="searchRow">
+      <button type="button" onclick="search()">Search</button>
+    </form>
+    <p id="result"></p>
+    
+    <script>
+function search() {
+  // Get the user input
+  var searchRow = parseInt(document.getElementById("searchRow").value);
+
+  // Define the CSV file path
+  var csvFilePath = "data.csv";
+
+  // Fetch the file contents as a Blob
+  fetch(csvFilePath)
+    .then(response => response.blob())
+    .then(blob => {
+      // Create a FileReader object
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        var contents = event.target.result;
+        var lines = contents.split("\n");
+
+        // Get the value from column A in the specified row
+        if (searchRow <= lines.length) {
+          var cols = lines[searchRow - 1].split(",");
+          document.getElementById("result").innerHTML = cols[0];
+        } else {
+          document.getElementById("result").innerHTML = "Row not found";
+        }
+      };
+      reader.readAsText(blob);
+    })
+    .catch(error => console.error(error));
+}
+    </script>
+  </body>
+</html>
