@@ -98,11 +98,10 @@ function search() {
 
         // Get the value from column A in the specified row
         if (searchRow <= lines.length) {
+          document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
 	  textToClipboard(cols[0])
-	  // Update Image
-          document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
         } else {
           document.getElementById("result").innerHTML = "Pokemon Number Not Found!";
 	  document.getElementById("imgOut").src = "";
