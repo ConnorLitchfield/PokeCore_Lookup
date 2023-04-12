@@ -80,7 +80,7 @@ function search() {
 
   // Get the user input
   var searchRow = parseInt(document.getElementById("searchRow").value);
-  
+ document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
 
 
   // Define the CSV file path
@@ -98,7 +98,6 @@ function search() {
 
         // Get the value from column A in the specified row
         if (searchRow <= lines.length) {
-          document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
           var cols = lines[searchRow - 1].split(",");
           document.getElementById("result").innerHTML = cols[0];
 	  textToClipboard(cols[0])
@@ -114,6 +113,6 @@ function search() {
 
 
     </script>
-<BR><BR><BR><BR><p>V4.6<BR>Made for my beautiful wife Stasia.</p>
+<BR><BR><BR><BR><p>V4.7<BR>Made for my beautiful wife Stasia.</p>
   </body>
 </html>
