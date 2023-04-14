@@ -46,7 +46,7 @@
     <form>
       <label for="searchRow">Enter the PNG number from the image in discord:</label>
       <BR>
-      <input type="number" id="searchRow">
+      <input type="text" id="searchRow">
       <button id="myBtn" type="button" onclick="search()">Search</button>
     </form>
     <h2>NAME: </h2>
@@ -79,9 +79,9 @@
     <script>
       function search() {
         // Get the user input
-        var searchRowIn = parseInt(document.getElementById("searchRow").value);
-	var searchRow = searchRowIn.substring(1);
-	      
+        var searchRow = parseInt(document.getElementById("searchRow").value.slice(-3));
+		console.error(searchRow);
+		
         document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
         // Define the CSV file path
         var csvFilePath = "data.csv";
@@ -97,6 +97,7 @@
               var cols = lines[searchRow - 1].split(",");
               document.getElementById("result").innerHTML = cols[0];
               textToClipboard(cols[0])
+			  	setTimeout("alert('Catch code copied to clipboard!');", 1000);
             } else {
               document.getElementById("result").innerHTML = "Pokemon Number Not Found!";
               document.getElementById("imgOut").src = "";
@@ -104,7 +105,7 @@
           };
           reader.readAsText(blob);
         }).catch(error => console.error(error));
-	setTimeout("alert('Catch code copied to clipboard!');", 1000);
+
 	      
       }
 
@@ -114,6 +115,6 @@
     <BR>
     <BR>
     <BR>
-    <p>V3.2 <BR>Made for my beautiful wife Stasia. </p>
+    <p>V3.5 <BR>Made for my beautiful wife Stasia. </p>
   </body>
 </html>
