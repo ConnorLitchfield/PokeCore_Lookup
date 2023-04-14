@@ -80,6 +80,7 @@
       function search() {
         // Get the user input
         var searchRow = parseInt(document.getElementById("searchRow").value);
+	searchRow = searchRow.substr(searchRow.length - 3)
         document.getElementById("imgOut").src = "Images/" + searchRow + ".jpg";
         // Define the CSV file path
         var csvFilePath = "data.csv";
@@ -112,6 +113,6 @@
     <BR>
     <BR>
     <BR>
-    <p>V2.11 <BR>Made for my beautiful wife Stasia. </p>
+    <p>V3.0 <BR>Made for my beautiful wife Stasia. </p>
   </body>
 </html>
